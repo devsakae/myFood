@@ -1,16 +1,18 @@
-import React from 'react'
+import { Fragment } from 'react'
 import myfoodbanner from '../../assets/meals.jpg';
+import styles from './Header.module.css';
+import HeaderCartButton from './HeaderCartButton';
 
 export default function Header(props) {
   return (
-    <React.Fragment>
-      <header>
+    <Fragment>
+      <header className={styles.header}>
         <h1>myFood</h1>
-        <button>Carrinho</button>
+        <HeaderCartButton />
       </header>
-      <div>
-        <img src={ myfoodbanner } alt="myFood" />
+      <div className={styles['main-image']}>
+        <img src={ myfoodbanner } alt="myFood - Seu aplicativo de delivery preferido" />
       </div>
-    </React.Fragment>
+    </Fragment>
   )
 }
