@@ -9,8 +9,12 @@ export const Carrinho = (props) => {
   const valorTotal = `R$ ${cartCtx.valorTotal.toFixed(2)}`;
   const naoVazio = cartCtx.items.length > 0;
 
-  const cartItemRemoveHandler = (id) => {};
-  const cartItemAddHandler = (item) => {};
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removerItem(id);
+  };
+  const cartItemAddHandler = (item) => {
+    cartCtx.adicionarItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={styles["cart-items"]}>
