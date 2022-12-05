@@ -6,7 +6,7 @@ export default function ItemOrderForm(props) {
   return (
     <form className={styles.form}>
       <Input label="Quantidade" input={{
-        id: 'amount',
+        id: 'amount_' + props.id,
         type: 'number',
         min: '1',
         max: '5',

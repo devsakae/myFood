@@ -8,7 +8,7 @@ export default function Header(props) {
     <Fragment>
       <header className={styles.header}>
         <h1>myFood</h1>
-        <HeaderCartButton />
+        <HeaderCartButton onClick={props.onShowCart} />
       </header>
       <div className={styles['main-image']}>
         <img src={ myfoodbanner } alt="myFood - Seu aplicativo de delivery preferido" />

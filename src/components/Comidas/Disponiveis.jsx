@@ -33,6 +33,7 @@ const DUMMY_MEALS = [
 export default function Disponiveis() {
   const listaDisponiveis = DUMMY_MEALS.map((disp) => (
     <Item
+      id={disp.id}
       key={disp.id}
       name={disp.name}
       description={disp.description}
