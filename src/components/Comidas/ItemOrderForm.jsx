@@ -4,11 +4,11 @@ import styles from "./ItemOrderForm.module.css";
 
 export default function ItemOrderForm(props) {
   const [validAmount, setValidAmount] = useState(true);
-  const amountInputRef = useRef();
+  const inputValue = useRef();
   
-  const submitHandler = event => {
+  const submitForm = event => {
     event.preventDefault();
-    const enteredAmount = amountInputRef.current.value;
+    const enteredAmount = inputValue.current.value;
     const enteredAmountConverted = +enteredAmount;
     if (enteredAmount.trim().length === 0 || enteredAmountConverted < 1 || enteredAmountConverted > 5) {
       setValidAmount(false);
@@ -18,9 +18,9 @@ export default function ItemOrderForm(props) {
   };
 
   return (
-    <form className={styles.form} onSubmit={ submitHandler }>
+    <form className={styles.form} onSubmit={ submitForm }>
       <Input
-        ref={ amountInputRef }
+        ref={ inputValue }
         label="Quantidade"
         input={{
           id: 'amount_' + props.id,
