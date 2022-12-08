@@ -11,7 +11,6 @@ export default function HeaderCartButton(props) {
     return curr + acc.amount;
   }, 0);
 
-
   const btnStyles = `${styles.button} ${btnIsHighlighted ? styles.bump : ''}`;
 
   useEffect(() => {
