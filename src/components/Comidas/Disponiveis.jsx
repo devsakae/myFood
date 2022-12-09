@@ -3,6 +3,7 @@ import styles from "./Disponiveis.module.css";
 import Card from "../UI/Card";
 import Item from "./Item";
 import { useEffect } from "react";
+const FIREBASE_URL_FOODDB = 'https://myfood-3fc5a-default-rtdb.firebaseio.com/food.json';
 
 export default function Disponiveis() {
   const [menu, setMenu] = useState([]);
@@ -11,7 +12,7 @@ export default function Disponiveis() {
 
   useEffect(() => {
     const fetchFood = async () => {
-      const response = await fetch('https://myfood-3fc5a-default-rtdb.firebaseio.com/food.json');
+      const response = await fetch(FIREBASE_URL_FOODDB);
       if (!response.ok) {
         throw new Error('Fetch failed');
       }

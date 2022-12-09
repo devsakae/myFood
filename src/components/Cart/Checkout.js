@@ -41,11 +41,9 @@ const Checkout = (props) => {
     })
 
     if (!formIsValid) {
-
       return;
     }
-    // submit logic
-    console.dir({name, address, phone, whatsapp})
+    props.onSubmit({ name, address, phone, whatsapp })
   };
 
   const nameInvalidClass = `${styles.control} ${formValidity.name ? '' : styles.invalid}`
