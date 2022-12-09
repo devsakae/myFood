@@ -5,7 +5,7 @@ import {CartContext} from '../../store/cart-context';
 
 export default function Item(props) {
   const cartCtx = useContext(CartContext);
-  const newPrice = `R$ ${props.price.toFixed(2)}`;
+  const newPrice = `R$ ${props.price}`;
   const addToCartHandler = amount => {
     cartCtx.adicionarItem({
       id: props.id,

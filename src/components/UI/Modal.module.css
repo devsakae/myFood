@@ -8,9 +8,15 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.content {
+  max-height: 30rem;
+  overflow: auto;
+  padding: 0 1rem;
+}
+
 .modal {
   position: fixed;
-  top: 20vh;
+  top: 15vh;
   left: 5%;
   width: 90%;
   background-color: white;

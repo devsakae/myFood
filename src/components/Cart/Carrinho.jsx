@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Modal } from "../UI/Modal";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 import styles from "./Carrinho.module.css";
 import { CartContext } from "../../store/cart-context";
 
 export const Carrinho = (props) => {
+  const [checkingOut, setCheckingOut] = useState(false);
   const cartCtx = useContext(CartContext);
   const valorTotal = `R$ ${cartCtx.valorTotal.toFixed(2)}`;
   const naoVazio = cartCtx.items.length > 0;
@@ -31,6 +33,19 @@ export const Carrinho = (props) => {
     </ul>
   );
 
+  const fazerPedido = () => {
+    setCheckingOut(true);
+  };
+
+  const confirmBtns = (
+    <div className={styles.actions}>
+      <button className={styles["button--alt"]} onClick={props.onClose}>
+        Fechar
+      </button>
+      { naoVazio && <button className={styles.button} onClick={ fazerPedido }>Pedir</button>}
+    </div>
+  )
+
   return (
     <Modal onClose={props.onClose}>
       {cartItems}
@@ -38,12 +53,7 @@ export const Carrinho = (props) => {
         <span>Valor total</span>
         <span>{valorTotal}</span>
       </div>
-      <div className={styles.actions}>
-        <button className={styles["button--alt"]} onClick={props.onClose}>
-          Fechar
-        </button>
-        {naoVazio && <button className={styles.button}>Pedir</button>}
-      </div>
+      { checkingOut ? <Checkout onCancel={props.onClose} /> : confirmBtns }
     </Modal>
   );
 };

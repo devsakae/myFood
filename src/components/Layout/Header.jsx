@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import myfoodbanner from '../../assets/food-banner.jpeg';
+import myfoodbanner from '../../assets/banner.jpg';
 import styles from './Header.module.css';
 import HeaderCartButton from './HeaderCartButton';
 
