@@ -24,8 +24,8 @@ export const Carrinho = (props) => {
   };
 
   const cartItems = (
-    <ul className={styles["cart-items"]}>
-      {cartCtx.items.map((item) => (
+    <ul className={styles['cart-items']}>
+      { cartCtx.items?.map((item) => (
         <CartItem
           key={item.id}
           name={item.name}
@@ -68,7 +68,7 @@ export const Carrinho = (props) => {
 
   const cartModalContent = (
     <>
-    {cartItems}
+    { cartItems }
       <div className={styles.total}>
         <span>Valor total</span>
         <span>{valorTotal}</span>
