@@ -5,7 +5,7 @@ import Checkout from "./Checkout";
 import styles from "./Carrinho.module.css";
 import { CartContext } from "../../store/cart-context";
 
-const FIREBASE_URL = 'https://myfood-3fc5a-default-rtdb.firebaseio.com/pedidos.json';
+const FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
 
 export const Carrinho = (props) => {
   const [checkingOut, setCheckingOut] = useState(false);
